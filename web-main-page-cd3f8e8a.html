@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 持续关注 · 知识型介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f4ef;
+      font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+      color: #2c2b28;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background-color: #fcfaf7;
+      padding: 3rem 2.5rem;
+      border-radius: 2px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .hero {
+      text-align: left;
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #e5ddd1;
+      padding-bottom: 1.6rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1f3b3c;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .hero .subhead {
+      font-size: 1rem;
+      color: #6d6a64;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+
+    .summary {
+      font-size: 1.05rem;
+      margin-bottom: 2.2rem;
+      padding: 0.2rem 0;
+    }
+
+    .summary strong {
+      color: #2b5e5b;
+      font-weight: 600;
+    }
+
+    .highlight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2.4rem 0 2.8rem 0;
+    }
+
+    .highlight-item {
+      flex: 1 1 200px;
+      background: #f8f4ed;
+      padding: 1.5rem 1.5rem 1.8rem 1.5rem;
+      border-left: 3px solid #b7aa93;
+    }
+
+    .highlight-item h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1f3b3c;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .highlight-item p {
+      font-size: 0.95rem;
+      color: #3e3c37;
+    }
+
+    .usage-note {
+      background: #efeae0;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 2.6rem 0;
+      border-radius: 0;
+      position: relative;
+      font-size: 0.98rem;
+    }
+
+    .usage-note::before {
+      content: "📌 使用建议";
+      display: block;
+      font-weight: 600;
+      color: #2b5e5b;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    .usage-note p {
+      margin-bottom: 0.6rem;
+    }
+
+    .usage-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .trust-block {
+      background: #ffffff;
+      border: 1px solid #ddd6ca;
+      padding: 1.5rem 2rem;
+      margin: 2.8rem 0 2.2rem 0;
+      font-size: 0.94rem;
+      color: #43413c;
+    }
+
+    .trust-block strong {
+      color: #1f3b3c;
+    }
+
+    .faq-mini {
+      margin: 2.5rem 0 1.8rem 0;
+      border-top: 1px solid #e0d7c9;
+      padding-top: 2rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px dashed #ddd3c1;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      color: #2b5e5b;
+      cursor: pointer;
+      padding: 0.2rem 0;
+      font-size: 0.98rem;
+    }
+
+    .faq-mini details p {
+      margin: 0.6rem 0 0.4rem 0;
+      font-size: 0.93rem;
+      color: #3f3d38;
+    }
+
+    .access-line {
+      background: #f3efe7;
+      padding: 1.2rem 1.8rem;
+      margin: 2.4rem 0 0.8rem 0;
+      font-size: 1rem;
+      text-align: left;
+      border-left: 4px solid #b7aa93;
+    }
+
+    .access-line a {
+      color: #1f5e5b;
+      text-decoration: none;
+      border-bottom: 1px dotted #7d9c96;
+      font-weight: 500;
+      transition: border-bottom 0.15s;
+    }
+
+    .access-line a:hover {
+      border-bottom: 1px solid #1f3b3c;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      font-size: 0.82rem;
+      color: #7a756c;
+      border-top: 1px solid #e4dbcd;
+      padding-top: 1.6rem;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .highlight-grid {
+        gap: 1.2rem;
+      }
+      .highlight-item {
+        flex: 1 1 100%;
+      }
+      .usage-note,
+      .trust-block,
+      .access-line {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .page {
+        padding: 3.6rem 3.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <h1>世界杯 · 持续关注的节奏</h1>
+      <div class="subhead">从再次访问到收藏，再到日常信息源</div>
+    </div>
+
+    <div class="summary">
+      <p>对于长期关注足球赛事的朋友，一个稳定、轻量、聚焦于<strong>世界杯</strong>内容的信息节点，往往比泛资讯平台更值得保留。这里不追逐碎片新闻，而是围绕赛事结构、历史线索、数据参考和观赛脉络，提供一种可供反复查阅的文档式体验。若你曾经收藏过这个地址，如今再次打开，会发现它依然保持克制与完整——这正是我们持续维护它的理由。</p>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h3>赛事档案</h3>
+        <p>历届比赛结果、分组沿革、经典对阵与关键数据，以结构化方式组织，适合赛前查阅与赛后回顾。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>多届对照</h3>
+        <p>将不同届次的信息并置，方便对比赛制变化、主办国更替与参赛队伍演进，形成纵深感。</p>
+      </div>
+      <div class="highlight-item">
+        <h3>持续更新</h3>
+        <p>根据重要节点（预选赛分组、决赛圈抽签、比赛日程）进行补充，不冗余，不堆砌。</p>
+      </div>
+    </div>
+
+    <div class="usage-note">
+      <p>若你是初次接触这个页面，建议优先浏览「赛事档案」部分，那里整理了从1930年至今的主要脉络。对于已看过多次的用户，不妨将本站加入浏览器书签，或在下一个大赛周期到来前重新打开，你会发现内容已经过梳理与修正。</p>
+      <p>由于该站点不依赖推送与算法，最适合在安静时段深度阅读——比如赛前一周熟悉球队走势，或赛后对照历史数据验证观感。保持收藏夹里有一个纯粹的<strong>世界杯</strong>参考页，是一种很踏实的习惯。</p>
+    </div>
+
+    <div class="trust-block">
+      <strong>可信但克制的访问说明：</strong> 本网站的内容基于公开赛事资料与历史记录整理，不包含实时赔率、博彩引导或未经证实的内幕信息。所有数据均标注来源届次与场次，力求可回溯。网站未使用自动刷新或弹窗，不会追踪个人偏好。你可以放心地将其视为一个安静的文献型页面，而非营销性平台。
+    </div>
+
+    <div class="faq-mini">
+      <details>
+        <summary>为什么需要再次访问这个页面？</summary>
+        <p>随着大赛周期推进，站内会补充新的分组信息、赛程总览以及历史对照表。若你上一次访问是在几个月前，如今再来很可能已有更新。收藏它，相当于订阅了一份低频率、高密度的赛事笔记。</p>
+      </details>
+      <details>
+        <summary>这里和新闻网站有什么不同？</summary>
+        <p>新闻网站追求时效与点击，而这里侧重整理与沉淀。例如世界杯预选赛阶段的跨洲名额演变、决赛圈扩军历程等，都是新闻中不易找到完整梳理的主题。页面结构偏向工具书，而非快讯。</p>
+      </details>
+      <details>
+        <summary>内容会一直保持可访问吗？</summary>
+        <p>是的，该站点采用静态页面部署，无数据库依赖，长期可访问。我们不会突然改版或撤下历史内容，因此它适合作为稳定的参考锚点。</p>
+      </details>
+    </div>
+
+    <div class="access-line">
+      如果你希望直接进入内容主站，可以访问 <a href="https://web-main-worldcup.com" target="_blank" rel="noopener">世界杯</a>。那里呈现了完整的赛事索引与跨届数据，适合深度浏览与反复查阅。
+    </div>
+
+    <div class="footer-note">
+      世界杯 · 持续关注页面 · 以知识型视角梳理赛事脉络 · 无需注册，无需下载
+    </div>
+  </div>
+</body>
+</html>
